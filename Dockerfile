@@ -20,9 +20,15 @@ RUN apt-get update -qq && \
 COPY Gemfile* .
 RUN bundle install
 
-
 # Final stage for app image
 FROM base
+
+# Install litefs dependencies
+RUN apt-get update -y && apt-get install -y ca-certificates fuse3 sqlite3
+
+# Pull in the litefs binary
+COPY --from=flyio/litefs:0.5 /usr/local/bin/litefs /usr/local/bin/litefs
+ADD litefs.yml /etc/litefs.yml
 
 # Run and own the application files as a non-root user for security
 RUN useradd ruby --home /app --shell /bin/bash
@@ -37,4 +43,6 @@ COPY --chown=ruby:ruby . .
 
 # Start the server
 EXPOSE 8080
-CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "--port", "8080"]
+
+USER root
+CMD ["litefs", "mount"]
