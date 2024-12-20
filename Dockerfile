@@ -42,7 +42,7 @@ COPY --from=build --chown=ruby:ruby /app /app
 COPY --chown=ruby:ruby . .
 
 # Start the server
-EXPOSE 8080
+EXPOSE 8081
 
 USER root
 CMD ["litefs", "mount"]
