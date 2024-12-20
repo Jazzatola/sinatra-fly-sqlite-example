@@ -2,7 +2,10 @@ GEM
   remote: https://rubygems.org/
   specs:
     base64 (0.2.0)
+    bigdecimal (3.1.8)
+    dotenv (3.1.7)
     logger (1.6.4)
+    mini_portile2 (2.8.8)
     mustermann (3.0.3)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.7.4)
@@ -18,6 +21,8 @@ GEM
     rackup (2.2.1)
       rack (>= 3)
     ruby2_keywords (0.0.5)
+    sequel (5.87.0)
+      bigdecimal
     sinatra (4.1.1)
       logger (>= 1.6.0)
       mustermann (~> 3.0)
@@ -25,6 +30,9 @@ GEM
       rack-protection (= 4.1.1)
       rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
+    sqlite3 (2.4.1)
+      mini_portile2 (~> 2.8.0)
+    sqlite3 (2.4.1-arm64-darwin)
     tilt (2.4.0)
 
 PLATFORMS
@@ -32,9 +40,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv (~> 3.1)
   puma (~> 6.5)
   rackup (~> 2.2)
+  sequel (~> 5.87)
   sinatra (~> 4.1)
+  sqlite3 (~> 2.4)
 
 RUBY VERSION
    ruby 3.3.6p108
