@@ -10,4 +10,5 @@ gem 'sqlite3', '~> 2.4'
 
 group :development, :test do
     gem 'dotenv', '~> 3.1'
+    gem 'rake', '~> 13.2'
 end
