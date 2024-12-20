@@ -44,8 +44,8 @@ proxy:
 
 exec:
   # Only run migrations on candidate nodes.
-  # - cmd: "rails db:migrate"
-  #   if-candidate: true
+  - cmd: "bundle exec rake db:migrate"
+    if-candidate: true
 
   # Then run the application server on all nodes.
   - cmd: "bundle exec rackup --host 0.0.0.0 --port 8081"
