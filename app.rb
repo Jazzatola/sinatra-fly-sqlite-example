@@ -5,5 +5,5 @@ require 'sequel'
 DB = Sequel.connect(ENV['DATABASE_URL'])
 
 get '/' do
-    'Hello SQLite!'
+    erb :index
 end
