@@ -21,5 +21,5 @@ beatles.insert_ignore.insert(id: 3, first_name: 'Paul', last_name: 'McCartney')
 beatles.insert_ignore.insert(id: 4, first_name: 'Ringo', last_name: 'Starr')
 
 get '/' do
-    erb :index
+    erb :index, :locals => {:beatles => beatles.all}
 end

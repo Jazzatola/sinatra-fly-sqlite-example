@@ -8,8 +8,12 @@
   </head>
   <body>
     <main class="container">
-      <h1>Sinatra/Fly/Sqlite Example</h1>
-      <p>Hello!</p>
+      <h1>The Beatles</h1>
+      <ul id="beatles">
+      <% beatles.each do |beatle| %>
+        <li class="beatle"><%= beatle[:first_name] %> <%= beatle[:last_name] %></li>
+      <% end %>
+      </ul>
     </main>
   </body>
 </html>
