@@ -10,8 +10,8 @@
     <main class="container">
       <h1>The Beatles</h1>
       <ul id="beatles">
-      <% beatles.each do |beatle| %>
-        <li class="beatle"><%= beatle[:first_name] %> <%= beatle[:last_name] %></li>
+      <% people.each do |person| %>
+        <li class="beatle"><%= person.first_name %> <%= person.last_name %></li>
       <% end %>
       </ul>
     </main>
