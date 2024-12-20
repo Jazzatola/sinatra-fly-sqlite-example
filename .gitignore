@@ -3,3 +3,6 @@
 
 # Ignore environment config
 .env
+
+# Sqlite Databases
+db/*.db
